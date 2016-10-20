@@ -68,6 +68,7 @@ OpenMessage = OpenMessage + "2. There is no PRJ folder for the application" + vb
 OpenMessage = OpenMessage + "3. You have set the Module security settings to allow all access (Ctrl + M)" + vbNewLine
 OpenMessage = OpenMessage + "4. You haven't added the Issue Tracker Plugin to the application previously" + vbNewLine + vbNewLine
 OpenMessage = OpenMessage + "NB. Make sure QlikView is open but no Edit scripts or other windows are open within it. If the application haults you may need to go to the QlikView window to help it along." + vbNewLine + vbNewLine
+OpenMessage = OpenMessage + "NB. It is wise to take a backup of the application before starting this installation you can revert back to." + vbNewLine + vbNewLine
 OpenMessage = OpenMessage + "Press OK to select your QlikView application you'd like to add the plugin to."
 
 MsgBox OpenMessage, 0, "Issue Tracker Plugin"
@@ -129,7 +130,6 @@ With New QlikView
 	'Append IssueTrackerLoadScript to AppLoadScript
 	Set IssueTrackerLoadScriptFile = IssueTrackerFSO.OpenTextFile(IssueTrackerLoadScript)
 	Set AppLoadScriptFile = IssueTrackerFSO.OpenTextFile(AppLoadScript, ForAppending, True)
-	AppLoadScriptFile.WriteLine vbNewLine
 
 	Do Until IssueTrackerLoadScriptFile.AtEndOfStream
 		strLine = IssueTrackerLoadScriptFile.ReadLine()
@@ -173,26 +173,27 @@ With New QlikView
 		SheetNamePositionStart = InStr(SheetPositionStart+1, AppQlikviewProjectsText, "<SheetId>Document\")+18
 		SheetNamePositionEnd = InStr(SheetPositionStart+1, AppQlikviewProjectsText, "</SheetId>")
 		SheetName = Mid(AppQlikviewProjectsText, SheetNamePositionStart, SheetNamePositionEnd - SheetNamePositionStart)
-	    ChildObjectsPositionStart = InStr(SheetPositionStart+1, AppQlikviewProjectsText, "<ChildObjects>")+12
-		ChildObjectsPositionEnd = InStr(SheetPositionStart+1, AppQlikviewProjectsText, "</ChildObjects>")
+	    'ChildObjectsPositionStart = InStr(SheetPositionStart+1, AppQlikviewProjectsText, "<ChildObjects>")+12
+		'ChildObjectsPositionEnd = InStr(SheetPositionStart+1, AppQlikviewProjectsText, "</ChildObjects>")
+		ChildObjectsPositionStart = InStr(SheetPositionStart+1, AppQlikviewProjectsText, "</ChildObjects>")
 		
 		'Get confirmation from the user for each sheet if the Issue Tracker should be added
 		AddSheet = MsgBox("Add Issue Tracker to " + SheetName +"?",4,"Adding Issue Tracker to each Sheet")
 
-		'If user selects No then tell the user the sheet has not been added
+		'If user selects No then do nothing
 		If AddSheet = 7 Then 
-			MsgBox("Issue Tracker has not been added to " + SheetName)
+			'Do nothing'
 		'If the user says Yes then split the QlikviewProject.xml file at the start of the ChildObjects
 		ElseIf AddSheet = 6 Then
 			SplitEnd = ChildObjectsPositionStart
-			outputFileName = SplitFolder + SheetName + "-" + CStr(SplitCounter) + ".txt"
-			SplitText = Mid(AppQlikviewProjectsText, SplitStart, SplitEnd - SplitStart + 2)
+			outputFileName = SplitFolder + CStr(SplitCounter) + "-" + SheetName + ".txt"
+			SplitText = Mid(AppQlikviewProjectsText, SplitStart, SplitEnd - SplitStart)
 			Set outputFile = IssueTrackerFSO.CreateTextFile(outputFileName, True)
 			outputFile.Write(SplitText)
 			outputFile.Close
 			ReDim Preserve SheetArray(UBound(SheetArray) + 1)
 			SheetArray(UBound(SheetArray)) = SheetName
-			SplitStart = SplitEnd + 2
+			SplitStart = SplitEnd
 			SplitCounter = SplitCounter + 1
 		End If
 	Next
@@ -227,9 +228,9 @@ With New QlikView
 	NewQlikviewProjectsFile.Close
 
 	'Clean up files. Delete split files, delete current AppQlikviewProject file, then move and rename the New QlikviewProject file into the PRJ folder
-	IssueTrackerFSO.DeleteFile(SplitFolder+"*")
+	'IssueTrackerFSO.DeleteFile(SplitFolder+"*")
 	' IssueTrackerFSO.DeleteFolder(SplitFolder)
-	IssueTrackerFSO.DeleteFile("End.txt")
+	'IssueTrackerFSO.DeleteFile("End.txt")
 	IssueTrackerFSO.DeleteFile(AppQlikviewProjects)
 	IssueTrackerFSO.MoveFile "NewQlikviewProject.txt", AppQlikviewProjects
 
