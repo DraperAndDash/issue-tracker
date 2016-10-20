@@ -129,6 +129,7 @@ With New QlikView
 	'Append IssueTrackerLoadScript to AppLoadScript
 	Set IssueTrackerLoadScriptFile = IssueTrackerFSO.OpenTextFile(IssueTrackerLoadScript)
 	Set AppLoadScriptFile = IssueTrackerFSO.OpenTextFile(AppLoadScript, ForAppending, True)
+	AppLoadScriptFile.WriteLine vbNewLine
 
 	Do Until IssueTrackerLoadScriptFile.AtEndOfStream
 		strLine = IssueTrackerLoadScriptFile.ReadLine()
