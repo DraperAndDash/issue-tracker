@@ -1,0 +1,11 @@
+//These IDs allow the Issue Tracker to post to the correct project and thread on Basecamp
+
+SET vBasecampProjectID = '12345678'; //This needs to be set to the ID of the project
+SET vBasecampUATPostID = '12345678'; //This needs to be set to the ID of the UAT message
+SET vBasecampSMPostID = '12345678'; //This needs to be set to the ID of the S&M message
+
+//Example
+
+//Link = https://draperdash2.basecamphq.com/projects/13618299-issue-tracker/posts/99981564/comments
+//ProjectID = '13618299'
+//PostID = '99981564'
