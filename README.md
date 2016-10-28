@@ -15,11 +15,11 @@
 	This will add the Issue Tracker Plugin to the requested sheets in your QlikView application enabling users to leave comments to Basecamp.
 </br>
 	To ensure the plugin can be installed please make sure your QlikView application is in the following state.</br>
-	<ul><li>1. The application is unlocked</li>
-	<li>2. There is no PRJ folder for the application</li>
-	<li>3. You have set the Module security settings to allow all access (Ctrl + M)</li>
-	<li>4. You haven't added the Issue Tracker Plugin to the application previously</li>
-	</ul>
+	<ol><li>The application is unlocked</li>
+	<li>There is no PRJ folder for the application</li>
+	<li>You have set the Module security settings to allow all access (Ctrl + M)</li>
+	<li>You haven't added the Issue Tracker Plugin to the application previously</li>
+	</ol>
 </br>
 	NB. Make sure QlikView is open but no Edit scripts or other windows are open within it. If the application haults you may need to go to the QlikView window to help it along.
 </br>
