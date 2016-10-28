@@ -11,17 +11,19 @@
 </p>
 <p>
 	Welcome to the Issue Tracker Plugin installation wizard!
-
+</br>
 	This will add the Issue Tracker Plugin to the requested sheets in your QlikView application enabling users to leave comments to Basecamp.
-
-	To ensure the plugin can be installed please make sure your QlikView application is in the following state.
-		1. The application is unlocked" + vbNewLine
-		2. There is no PRJ folder for the application" + vbNewLine
-		3. You have set the Module security settings to allow all access (Ctrl + M)
-		4. You haven't added the Issue Tracker Plugin to the application previously
-
+</br>
+	To ensure the plugin can be installed please make sure your QlikView application is in the following state.</br>
+	<ul><li>1. The application is unlocked</li>
+	<li>2. There is no PRJ folder for the application</li>
+	<li>3. You have set the Module security settings to allow all access (Ctrl + M)</li>
+	<li>4. You haven't added the Issue Tracker Plugin to the application previously</li>
+	</ul>
+</br>
 	NB. Make sure QlikView is open but no Edit scripts or other windows are open within it. If the application haults you may need to go to the QlikView window to help it along.
-	NB. It is wise to take a backup of the application before starting this installation you can revert back to." + vbNewLine + vbNewLine
+</br>
+	NB. It is wise to take a backup of the application before starting this installation you can revert back to.
 </p>
 
 <h2>Basecamp Config</h2>
