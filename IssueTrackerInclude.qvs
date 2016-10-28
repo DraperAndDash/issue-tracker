@@ -27,5 +27,5 @@ _Row, _IssueTitle, _IssueDescription, _IssueScreenshot
 1
 ];
 
-SET vPostIssueToBasecamp = $(include=https://raw.githubusercontent.com/GlutesDD/issue-tracker/master/PostIssueToBasecamp.vbs);
-SET vClearIssueFields = $(include=https://raw.githubusercontent.com/GlutesDD/issue-tracker/master/ClearIssueFields.vbs);
+SET vPostIssueToBasecamp = $(include=https://raw.githubusercontent.com/DraperAndDash/issue-tracker/master/PostIssueToBasecamp.vbs);
+SET vClearIssueFields = $(include=https://raw.githubusercontent.com/DraperAndDash/issue-tracker/master/ClearIssueFields.vbs);

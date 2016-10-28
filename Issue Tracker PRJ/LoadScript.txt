@@ -4,7 +4,9 @@ SET vAppRelease = 'UAT'; //UAT or SM depending on whether app is signed off and 
 SET vAppVersion = '1.0';
 
 //Include Basecamp Project variables
-$(include=https://raw.githubusercontent.com/GlutesDD/issue-tracker/master/basecamp-config/whittington.qvs);
+//This needs to be modified once the Issue Tracker Plugin has been installed.
+//Chnage the below link to the file that represents the project the app belongs to from https://github.com/DraperAndDash/issue-tracker/tree/master/basecamp-config
+$(include=https://raw.githubusercontent.com/DraperAndDash/issue-tracker/master/basecamp-config/blank-client.qvs);
 
 //Inclulde Global Variables and Scripts
-$(include=https://raw.githubusercontent.com/GlutesDD/issue-tracker/master/IssueTrackerInclude.qvs);
+$(include=https://raw.githubusercontent.com/DraperAndDash/issue-tracker/master/IssueTrackerInclude.qvs);
