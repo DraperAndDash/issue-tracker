@@ -32,7 +32,7 @@
 </p>
 
 <p>
-The Draper & Dash Issue Tracker Plugin © uses the following repositories:
-	https://github.com/mindspank/qvutils
-	https://github.com/basecamp/basecamp-classic-api
+The Draper & Dash Issue Tracker Plugin © uses the following repositories:</br>
+	<ul><li>https://github.com/mindspank/qvutils</li>
+	<li>https://github.com/basecamp/basecamp-classic-api</li></ul>
 </p>
