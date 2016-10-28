@@ -9,7 +9,7 @@
 <p>
 	To add the Issue Tracker Plugin to a QlikView application you need to download this full repository and unzip to the local machine where the applications are. Once you've downloaded this run the file issue-tracker\BSP\Issue Tracker Plugin.vbs and follow the installation instructions.
 </p>
-<p>
+<p>```
 	Welcome to the Issue Tracker Plugin installation wizard!
 </br>
 	This will add the Issue Tracker Plugin to the requested sheets in your QlikView application enabling users to leave comments to Basecamp.
@@ -24,7 +24,7 @@
 	NB. Make sure QlikView is open but no Edit scripts or other windows are open within it. If the application haults you may need to go to the QlikView window to help it along.
 </br>
 	NB. It is wise to take a backup of the application before starting this installation you can revert back to.
-</p>
+```</p>
 
 <h2>Basecamp Config</h2>
 <p>
